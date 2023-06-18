@@ -9,6 +9,7 @@ import InsureImg from "./imgs/insure.svg";
 import AirImg from "./imgs/the-air-filter-company.svg";
 import EyeImg from "./imgs/eyecam-co.svg";
 import ShortlyImg from "./imgs/shortly.svg";
+import HeaderImg from "./imgs/bg-header-desktop.svg";
 import Card from "./Card";
 
 export default function Main() {
@@ -148,32 +149,37 @@ export default function Main() {
   return (
     <React.Fragment>
       <main>
-        <div className="container mt-5">
-          <div className="row">
-            <div className="col-12">
-              <div className="filter-tags-c">
-                <ul id="filter-tags-list">
-                  {/* filter list */}
-                  {filters.map((filter, index) => (
-                    <li key={index} className="tag-filter">
-                      <p>{filter}</p>
-                      <span className="close-span" onClick={removeFilter}>
-                        ×
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <ul id="filter-tags-list"></ul>
-                <p
-                  className="clear-tags"
-                  id="js-clear-tags"
-                  onClick={clearFilters}
-                >
-                  Clear
-                </p>
+        <header>
+          <img className="img-fluid h-100" src={HeaderImg} />
+        </header>
+        <div className="container mt-1">
+          {filters.length !== 0 && (
+            <div className="row">
+              <div className="col-12">
+                <div className="filter-tags-c">
+                  <ul id="filter-tags-list">
+                    {/* filter list */}
+                    {filters.map((filter, index) => (
+                      <li key={index} className="tag-filter">
+                        <p>{filter}</p>
+                        <span className="close-span" onClick={removeFilter}>
+                          ×
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <ul id="filter-tags-list"></ul>
+                  <p
+                    className="clear-tags"
+                    id="js-clear-tags"
+                    onClick={clearFilters}
+                  >
+                    Clear
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          )}
           <div className="row">
             <ul className="col-12" id="job-list">
               {/* every, some, filter, map */}
