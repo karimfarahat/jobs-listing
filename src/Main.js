@@ -13,7 +13,9 @@ import HeaderImg from "./imgs/bg-header-desktop.svg";
 import Card from "./Card";
 
 export default function Main() {
-  const [cards, setCards] = useState([
+  const [filters, setFilters] = useState([]);
+
+  const cards = [
     {
       id: 1,
       img: PhotoImg,
@@ -119,9 +121,7 @@ export default function Main() {
       location: "Worldwide",
       skill: ["Frontend", "Junior", "React", "Sass", "Javascript"],
     },
-  ]);
-  const [filters, setFilters] = useState([]);
-
+  ];
   const addFilter = (e) => {
     //innertext of the target
     if (!filters.includes(e.target.innerText)) {
